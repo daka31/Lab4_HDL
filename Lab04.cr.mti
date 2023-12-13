@@ -1,0 +1,33 @@
+C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/DataMemory.v {1 {vlog -work work C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/DataMemory.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module DataMemory
+-- Compiling module DataMemory_tb
+
+Top level modules:
+	DataMemory_tb
+
+} {} {}} C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/RAM.v {1 {vlog -work work C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/RAM.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module RAM
+-- Compiling module RAM_tb
+
+Top level modules:
+	RAM_tb
+
+} {} {}} C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/ALU_32bit.v {1 {vlog -work work C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/ALU_32bit.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ALU_32bit
+-- Compiling module ALU_32bit_tb
+
+Top level modules:
+	ALU_32bit_tb
+
+} {} {}} C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/RegisterFile.v {1 {vlog -work work {C:\Nam3\TKHTSHDL_CE213\ProjModelsim\Lab04\RegisterFile.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module RegisterFile
+-- Compiling module RegisterFile_tb
+
+Top level modules:
+	RegisterFile_tb
+
+} {} {}}

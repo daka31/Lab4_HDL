@@ -1,0 +1,165 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Nam3\TKHTSHDL_CE213\ProjModelsim\Ex1
+vALU_32bit
+Z1 !s100 15QoiE7@A8Si;G;TfafG<2
+Z2 I1RbDiZQVJeKj[dEl@2Q:O3
+Z3 V71=oL7PB=cD:NZ1=PckE00
+Z4 dC:\Nam3\TKHTSHDL_CE213\ProjModelsim\Lab04
+Z5 w1702413713
+Z6 8C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/ALU_32bit.v
+Z7 FC:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/ALU_32bit.v
+L0 2
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s108 1702413726.384000
+Z10 !s107 C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/ALU_32bit.v|
+Z11 !s90 -reportprogress|300|-work|work|C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/ALU_32bit.v|
+Z12 o-work work -O0
+Z13 n@a@l@u_32bit
+!i10b 1
+!s85 0
+!s101 -O0
+vALU_32bit_tb
+Z14 !s100 fRz0?KEmPaFEG:Ni<3:7j1
+Z15 I^n^maMC]k8?Ieg3O0:QLM0
+Z16 VfZ?m=]^YR3fiE`CVa;V]c0
+R4
+R5
+R6
+R7
+L0 16
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z17 n@a@l@u_32bit_tb
+!i10b 1
+!s85 0
+!s101 -O0
+vDataMemory
+Z18 !s100 mn:W3@eMd[zGU=4mheU6_2
+Z19 IjQePi7CQcnePDK6_S?7A<1
+Z20 VBk[hCj2>`K^H2ZdBOL<7H0
+R4
+Z21 w1701944056
+Z22 8C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/DataMemory.v
+Z23 FC:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/DataMemory.v
+L0 3
+R8
+r1
+31
+Z24 !s108 1702414284.650000
+Z25 !s107 C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/DataMemory.v|
+Z26 !s90 -reportprogress|300|-work|work|C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/DataMemory.v|
+R12
+Z27 n@data@memory
+!i10b 1
+!s85 0
+!s101 -O0
+vDataMemory_tb
+Z28 I:>]LGzPMHFi1NJhk82YM=2
+Z29 V?EBHl@R@nhRA16kMCBbS:0
+R4
+R21
+R22
+R23
+L0 19
+R8
+r1
+31
+R24
+R25
+R26
+R12
+Z30 n@data@memory_tb
+!i10b 1
+Z31 !s100 @L1m>9OO2iOZT@lQn43Qz0
+!s85 0
+!s101 -O0
+vRAM
+!i10b 1
+Z32 !s100 oPe4kGdbNB>[RUJO0JomU1
+Z33 IJe[?h;X::GhKdOZLUWW@o3
+Z34 Vg4V^j4elYR@0=1??BPd;[1
+R4
+Z35 w1701462040
+Z36 8C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/RAM.v
+Z37 FC:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/RAM.v
+L0 3
+R8
+r1
+!s85 0
+31
+Z38 !s108 1702414527.414000
+Z39 !s107 C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/RAM.v|
+Z40 !s90 -reportprogress|300|-work|work|C:/Nam3/TKHTSHDL_CE213/ProjModelsim/Lab04/RAM.v|
+!s101 -O0
+R12
+Z41 n@r@a@m
+vRAM_tb
+!i10b 1
+Z42 !s100 eK13oeL>9=bCTDJ`PEYSI0
+Z43 IeVMVZI3<;^8a`1NAc1F2;2
+Z44 VXj`92CT[<F^RPYbHUZ<6[1
+R4
+R35
+R36
+R37
+L0 21
+R8
+r1
+!s85 0
+31
+R38
+R39
+R40
+!s101 -O0
+R12
+Z45 n@r@a@m_tb
+vRegisterFile
+Z46 I5Lc>HAgk8:d[3Nal6Q>XJ1
+Z47 VWiiY=FDO23;;dgd`WBO6L1
+R4
+Z48 w1701459457
+Z49 8C:\Nam3\TKHTSHDL_CE213\ProjModelsim\Lab04\RegisterFile.v
+Z50 FC:\Nam3\TKHTSHDL_CE213\ProjModelsim\Lab04\RegisterFile.v
+L0 3
+R8
+r1
+31
+Z51 !s108 1702413962.594000
+Z52 !s107 C:\Nam3\TKHTSHDL_CE213\ProjModelsim\Lab04\RegisterFile.v|
+Z53 !s90 -reportprogress|300|-work|work|C:\Nam3\TKHTSHDL_CE213\ProjModelsim\Lab04\RegisterFile.v|
+R12
+Z54 n@register@file
+Z55 !s100 b7ba9PbBzhA6`TM20Z]561
+!i10b 1
+!s85 0
+!s101 -O0
+vRegisterFile_tb
+Z56 ISoU@Q2N6oNS<=BZ7`9`dI0
+Z57 VJLDW3:=A6N;c63?McZX2Q3
+R4
+R48
+R49
+R50
+L0 22
+R8
+r1
+31
+R51
+R52
+R53
+R12
+Z58 n@register@file_tb
+Z59 !s100 g3BVRmdfXK3N<oKQMTN>C3
+!i10b 1
+!s85 0
+!s101 -O0
