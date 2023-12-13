@@ -9,18 +9,20 @@ module RegisterFile(clk, ReadWriteEn, ReadAddress1, ReadAddress2, WriteAddress, 
   
   always @(posedge clk) begin
     if(ReadWriteEn) begin
-      ReadData1 = Mem[ReadAddress1];
-      ReadData2 = Mem[ReadAddress2];
+      ReadData1 <= Mem[ReadAddress1];
+      ReadData2 <= Mem[ReadAddress2];
+      // #1 $display("%0t# @READ Reg[%0d] = %0d, Reg[%0d] = %0d", $time, ReadAddress1, ReadData1, ReadAddress2, ReadData2);
     end
     else begin
       Mem[WriteAddress] = WriteData;
+      $display("%0t# @WRITE Reg[%0d] = %0d", $time, WriteAddress, WriteData);
     end
   end
 endmodule
 
 
 module RegisterFile_tb();
-  reg clk;
+  reg clk = 0;
   reg ReadWriteEn;
   reg [4:0] ReadAddress1, ReadAddress2, WriteAddress;
   reg [31:0] WriteData;
@@ -29,8 +31,10 @@ module RegisterFile_tb();
   
   RegisterFile RF(clk, ReadWriteEn, ReadAddress1, ReadAddress2, WriteAddress, WriteData, ReadData1, ReadData2);
   
+  always #5 clk = ~clk;
+  initial $monitor("%0t# ReadData1 = %0d, ReadData2 = %0d", $time, ReadData1, ReadData2);
+
   initial begin
-    clk = 0;
     ReadWriteEn = 0;
     ReadAddress1 = 0;
     ReadAddress2 = 0;
@@ -52,11 +56,8 @@ module RegisterFile_tb();
     ReadAddress1 = 5;
     ReadAddress2 = 15;
     
-    
+    #10
+    $finish;
   end
-  initial begin
-    $monitor("Time = %d, ReadData1 = %h, ReadData2 = %h", $time, ReadData1, ReadData2);
-    #100 $finish;
-  end
-  always #5 clk = ~clk;
+
 endmodule

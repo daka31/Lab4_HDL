@@ -21,6 +21,7 @@ module ALU_32bit_tb();
   ALU_32bit alu(sel, a, b, out);
   
   initial begin
+    $display("Simulation started");
     $monitor("sel = %b, a = %h, b = %h, out = %h", sel, a, b, out);
     sel = 3'b000; //Complement A
     a = 32'h12345678;
@@ -41,11 +42,9 @@ module ALU_32bit_tb();
     #10 
     sel = 3'b111; //Increment A
     #10
+    
+    $display("Simulation ended");
     $finish;
   end
-  initial begin
-    $display("Simulation started");
-    #80
-    $display("Simulation ended");
-  end
+
 endmodule

@@ -25,10 +25,14 @@ module RAM_tb();
   reg [7:0] data_in;
   
   RAM rm(clk, cs, wr_e, oe, addr, data);
+  assign data = (cs && wr_e) ? data_in : 8'bz;
+
+  initial $monitor("%0t# cs = %0d, wr_e = %0d, oe = %0d, addr = %0d, data = %0d", $time, cs, wr_e, oe, addr, data);
+  always #5 clk = ~clk;
   
   initial begin
-    
     clk = 0;
+    
     cs = 0;
     wr_e = 0;
     oe = 0;
@@ -40,14 +44,14 @@ module RAM_tb();
     wr_e = 1;
     oe = 0;
     addr = 5;
-    data_in = 8'hab;
+    data_in = 8'h45;
     
     #10
     cs = 1;
     wr_e = 1;
     oe = 1;
     addr = 14;
-    data_in = 8'hef;
+    data_in = 8'h37;
     
     #10
     cs = 1;
@@ -67,11 +71,5 @@ module RAM_tb();
     oe = 0;
     addr = 5;    
   end
-  initial begin
-    $monitor("Time = %t, cs = %d, wr_e = %d, oe = %d, addr = %d, data = %h", $time, cs, wr_e, oe, addr, data);
-    #200 $finish;  
-  end
-  always #5 clk = ~clk;
   
-  assign data = (cs && wr_e) ? data_in : 8'bz;
 endmodule

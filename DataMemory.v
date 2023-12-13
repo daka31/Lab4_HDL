@@ -9,10 +9,13 @@ module DataMemory(clk, WriteEn, ReadEn, Address, WriteData, ReadData);
   reg [7:0] Mem [1024:0];
   
   always @(posedge clk) begin
-    if(WriteEn)
+    if(WriteEn) begin
       Mem[Address] = WriteData;
-    if(ReadEn)
+      $display("%0t# @WRITE Mem[%0d] = %0d", $time, Address, WriteData);      
+    end
+    if(ReadEn) begin
       ReadData = Mem[Address];
+    end
   end
 endmodule
 
@@ -22,11 +25,21 @@ module DataMemory_tb();
   reg [7:0] WriteData;
   wire [7:0] ReadData;
   
-  DataMemory dmem(.clk(clk), .WriteEn(WriteEn), .ReadEn(ReadEn), .Address(Address), .WriteData(WriteData), .ReadData(ReadData));
+  DataMemory dmem(
+    .clk(clk),
+    .WriteEn(WriteEn),
+    .ReadEn(ReadEn),
+    .Address(Address),
+    .WriteData(WriteData),
+    .ReadData(ReadData)
+  );
   
+  initial $monitor("%0t# ReadEn = %b, WriteEn = %b, Address = %0d, WriteData = %0d, ReadData = %0d", $time, ReadEn, WriteEn, Address, WriteData, ReadData);
+  always #5 clk = ~clk;
   
   initial begin
     clk = 0;
+    
     ReadEn = 0;
     WriteEn = 0;
     Address = 0;
@@ -36,17 +49,14 @@ module DataMemory_tb();
     ReadEn = 0;
     WriteEn = 1;
     Address = 5;
-    WriteData = 8'hab;
+    WriteData = 8'd97;
     
     #10
     ReadEn = 1;
     WriteEn = 0;
     Address = 5;
     
+    #10
+    $finish;
   end
-  initial begin
-    $monitor("Time = %t, ReadEn = %b, WriteEn = %b, Address = %h, WriteData = %h, ReadData = %h", $time, ReadEn, WriteEn, Address, WriteData, ReadData);
-    #30 $finish;
-  end
-  always #5 clk = ~clk;
 endmodule
