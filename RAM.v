@@ -7,12 +7,14 @@ module RAM(clk, cs, wr_e, oe, addr, data);
   reg [7:0] data_out;
   reg [7:0] Mem [127:0];
   always @(posedge clk) begin
-    if(cs && wr_e)
-      Mem[addr] = data;
-  end
-  always @(posedge clk) begin
-    if(cs && !wr_e && oe)
+    if(cs && wr_e) begin
+      Mem[addr] <= data;
+      $display("%0t# @WRITE Mem[%0d] = %0d", $time, addr, data);
+    end;
+    if(cs && !wr_e && oe) begin
       data_out = Mem[addr];
+      $display("%0t# @READ Mem[%0d] = %0d", $time, addr, data_out);
+    end
   end
   
   assign data = (cs && !wr_e && oe) ? data_out : 8'bz;
@@ -70,6 +72,8 @@ module RAM_tb();
     wr_e = 0;
     oe = 0;
     addr = 5;    
+    
+    #10
+    $finish;
   end
-  
 endmodule

@@ -20,7 +20,6 @@ module RegisterFile(clk, ReadWriteEn, ReadAddress1, ReadAddress2, WriteAddress, 
   end
 endmodule
 
-
 module RegisterFile_tb();
   reg clk = 0;
   reg ReadWriteEn;
@@ -32,24 +31,24 @@ module RegisterFile_tb();
   RegisterFile RF(clk, ReadWriteEn, ReadAddress1, ReadAddress2, WriteAddress, WriteData, ReadData1, ReadData2);
   
   always #5 clk = ~clk;
-  initial $monitor("%0t# ReadData1 = %0d, ReadData2 = %0d", $time, ReadData1, ReadData2);
+  initial $monitor("%0t# ReadWriteEn = %0d,  ReadAddress1 = %0d, ReadData1 = %0d, ReadAddress2 = %0d,  ReadData2 = %0d, WriteAddress = %0d, WriteData = %0d", $time, ReadWriteEn, ReadAddress1, ReadData1, ReadAddress2, ReadData2, WriteAddress, WriteData);
 
   initial begin
     ReadWriteEn = 0;
     ReadAddress1 = 0;
     ReadAddress2 = 0;
     WriteAddress = 0;
-    WriteData = 0;
+    WriteData = 5;
 
     #10
     ReadWriteEn = 0;
     WriteAddress = 5;
-    WriteData = 32'h12345678;
+    WriteData = 12;
     
     #10
     ReadWriteEn = 0;
     WriteAddress = 15;
-    WriteData = 32'habcdabcd;
+    WriteData = 33;
     
     #10
     ReadWriteEn = 1;
