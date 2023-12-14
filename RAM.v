@@ -10,7 +10,7 @@ module RAM(clk, cs, wr_e, oe, addr, data);
     if(cs && wr_e) begin
       Mem[addr] <= data;
       $display("%0t# @WRITE Mem[%0d] = %0d", $time, addr, data);
-    end;
+    end
     if(cs && !wr_e && oe) begin
       data_out = Mem[addr];
       $display("%0t# @READ Mem[%0d] = %0d", $time, addr, data_out);
